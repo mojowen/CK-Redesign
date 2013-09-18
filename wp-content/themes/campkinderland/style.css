@@ -1,0 +1,627 @@
+/*
+	Theme Name:     Unnamed
+	Author:         Noah Manger
+*/
+@import url("normalize.css");
+
+/****************/
+/* Base Styles */
+/****************/
+
+html {
+	font-size: 62.5%; /* 10px */
+}
+
+body {
+	font-family: 'Open Sans', serif;
+	font-size: 1.6rem; font-size: 16px;
+	color: #333;
+}
+
+h1, h2 {
+	font-family: 'Homestead', serif;
+	color: #55736d;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 30px; font-size: 3.0rem;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+
+h2 {
+	font-size: 24px; font-size: 2.4rem;
+}
+
+h3 {
+	font-size: 20px; font-size: 2.0rem;
+	font-weight: 600;
+}
+
+p {
+	color: #333;
+}
+
+a {
+	text-decoration: none;
+	color: #55736d;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+
+/****************/
+/* Layout Rules */
+/****************/
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.center {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.left {
+	left: 0;
+}
+
+.right {
+	right: 0;
+}
+
+/* Lists */
+.horizontal {
+	list-style-type: none;
+	margin: 0;
+	margin-before: 0;
+	-webkit-margin-before: 0;
+	-ms-margin-before: 0;
+	-moz-margin-before: 0;
+	-o-margin-before: 0;
+	-webkit-padding-start: 0;
+	-moz-padding-start: 0;
+	-o-padding-start: 0;
+	-ms-padding-start: 0;
+	padding-start: 0;
+}
+
+.horizontal > li {
+	display: inline-block;
+}
+
+.expand {
+	cursor: pointer;
+}
+
+.map {
+	background: url('img/map-bg.png');
+	background-position: top center;
+}
+
+.circle {
+	width: 70px;
+	height: 20px;
+	border-radius: 100px;
+	padding: 40px 15px;
+}
+
+
+
+/****************/
+/* Module Rules */
+/****************/
+
+/* Header */
+header {
+	background: url('img/header-bg.png');
+}
+
+header:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 219px;
+	height: 150px;
+	background: url('img/logo-bg.png');
+	background-position: fixed;
+}
+
+#masthead {
+	padding: 20px 0;
+}
+
+.site-title {
+	font-family: "Homestead", serif;
+	font-size: 60px; font-size: 6.0rem;
+	color: #364659;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+.site-title:hover {
+	text-decoration: none;
+} 
+
+.site-description {
+	font-size: 24px; font-size: 2.4rem;
+	line-height: 1;
+	color: #55736d;
+	margin: 0;
+	padding: 0;
+}
+
+.site-description-year {
+	font-family: "Homestead", serif;
+	font-size: 18px; font-size: 1.8rem;
+	color: #9dbf8e;
+	padding: 0;
+	margin: 0;
+}
+
+.action-button {
+	position: relative;
+	display: block;
+	background: #9dbf8e;
+	border: 6px solid #cfd991;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	position: absolute;
+	top: 20px;
+	right: 0;
+	-moz-transition: all .2s;
+	-o-transition: all .2s;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.action-button:hover {
+	text-decoration: none;
+	background: #cfd991;
+	border:6px solid #9dbf8e;
+}
+
+.action-button:before,
+.action-button:after {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 3px;
+	background: #cfd991;
+	position: absolute;
+	top: 50px;
+}
+
+.action-button:hover:before,
+.action-button:hover:after {
+	background: #9dbf8e;
+}
+
+.action-button:before {
+	left: -16px;
+}
+
+.action-button:after {
+	right: -16px;
+}
+
+
+.donate {
+	right: 150px;
+}
+
+/* Navigation */
+
+nav {
+	background: #9dbf8e;
+	position: relative;
+}
+
+.menu a {
+	display: inline-block;
+	padding: 12px;
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.menu a:hover {
+	background: #55736d;
+	text-decoration: none;
+}
+
+.menu li:hover > .sub-menu {
+	display: block;	
+}
+
+.sub-menu {
+	display: none;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	padding: 12px 0;
+	background: rgba(208, 217, 145, .7);
+	list-style-type: none;
+}
+
+.sub-menu li a {
+	padding: 0 12px;
+	display: inline-block;
+	float: left;
+	font-size: 14px; font-size: 1.4rem;
+	color: #55736d;
+	text-transform: none;
+	border-right: 1px solid #55736d;
+}
+
+.sub-menu a:hover {
+	background: none;
+	text-decoration: underline;
+}
+
+.sub-menu li:last-child a {
+	border: none;
+}
+
+.sub-menu li:first-child a:before {
+	content: '\00bb  ';
+}
+
+
+/* Slider */
+
+.slides {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.slide {
+	margin: 0;
+	padding: 0;
+	height: 520px;
+	overflow: hidden;
+}
+
+.slide img {
+	width: 100%;
+	height: 520px;
+}
+
+
+/* Our Story */
+
+.our-story {
+	background: #55736d;
+	padding: 20px 0;
+	color: #fff;
+	font-size: 18px; font-size: 1.8rem;
+	font-weight: 200;
+}
+
+.our-story h1 {
+	color: #9dbf8e;
+}
+
+.part-1, 
+.part-2 {
+	width: 630px;
+	float: right;
+}
+
+.part-2 {
+	padding: 20px 0 0;
+	display: none;
+}
+
+.story-logo {
+	width: 330px;
+	height: 140px;
+	background: url('img/our-story-logo.png') no-repeat;
+	background-position: center;
+	float: left;
+}
+
+.down-arrow {
+	display: block;
+	width: 24px;
+	height: 133px;
+	background: url('img/down-arrow.png') no-repeat;
+	float: right;
+	margin: 0 36px 0 0;
+}
+
+/* Home Content (News + Events) */
+
+.home-content {
+	padding: 22px 0 0;
+}
+
+.column {
+	width: 430px;
+	height: 100%;
+	padding: 5px 0 160px;
+}
+
+.banner {
+	width: 410px;
+	background: #9dbf8e;
+	padding: 8px 10px;
+	margin: 0 0 30px 0;
+	position: relative;
+}
+
+.banner h2 {
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	padding: 3px 0;
+	margin: 0;
+	color: #d0d991;
+}
+
+.banner:after,
+.banner:before {
+	content: "";
+	position: absolute;
+}
+
+.news .banner:after {
+	top: 0;
+	left: -12px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 0 12px 26px 0;
+	border-color: transparent #9dbf8e transparent transparent;
+}
+
+.news .banner:before {
+	bottom: 0;
+	left: -12px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 0 0 26px 12px;
+	border-color: transparent transparent #9dbf8e transparent;
+}
+
+.news {
+	float: left;
+	border-right: 3px solid #9dbf8e;
+}
+
+.news .post {
+	padding: 0 42px 0 10px;
+}
+
+.post-title {
+	margin: 0;
+}
+
+.post-title a {
+	color: #9dbf8e;
+}
+
+.post-content {
+	padding: 0 0 20px 0;
+}
+
+.post-content p {
+	margin: 0;
+}
+
+
+/* Events */
+
+.events {
+	width: 410px;
+}
+
+.events .banner {
+	background: #d0d991;
+}
+
+.events .banner h2 {
+	color: #9dbf8e ;
+	padding: 3px 0 3px 10px;
+}
+
+.events .banner:after {
+	top: 0;
+	right: -12px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 26px 12px 0 0;
+	border-color: #cfd991 transparent transparent transparent;
+}
+
+.events .banner:before {
+	bottom: 0;
+	right: -12px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 26px 0 0 12px;
+	border-color: transparent transparent transparent #cfd991;
+}
+.events {
+	float: right;
+	border-left: 3px solid #d0d991;
+	position: relative;
+}
+
+.event {
+	width: 390px;
+	border: 1px solid #cbcbcb;
+	background: #fff;
+	padding: 10px;
+	margin: 0 0 10px 10px;
+	border-radius: 2px;
+}
+
+.event-date {
+	width: 72px;
+	margin: 0 13px 0 0;
+	background: #d0d991;
+	padding: 4px;
+	border-radius: 5px;
+	text-align: center;
+	float: left;
+}
+
+.event-date .month {
+	width: 100%;
+	padding: 0 0 3px 0;
+	font-size: 10px; font-size: 1.0rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: block;
+	color: #fff;
+	border-bottom: 2px solid #fff;
+}
+
+.event-date .day {
+	font-size: 48px; font-size: 4.8rem;
+	line-height: 1;
+	font-family: "Homestead", serif;
+	color: #fff;
+}
+
+.events .read-more {
+	padding: 0 15px;
+	text-align: left;
+	font-size: 12px;
+}
+
+
+/*** Footer ***/
+
+footer {
+	min-height: 300px;
+	position: relative;
+	padding: 0 0 60px 0;
+	background: url('img/footer-bg.png') #9dbf8e;
+	background-position: 0 100%;
+}
+
+.grass {
+	position: absolute;
+	width: 100%;
+	top: -150px;
+	height: 150px;
+	background: url('img/grass.png');
+	background-position: center;
+}
+
+.partners {
+	padding: 20px 0;
+	background: #fff;
+}
+
+.partners h2 {
+	display: inline-block;
+	margin: 0;
+}
+
+.partner-logos {
+	text-align: center;
+	padding: 20px 0;
+}
+
+.partner-logo img {
+	max-width: 120px;
+	margin: 0 20px;
+}
+
+.arrow-top {
+	float: right;
+}
+
+.contact {
+	overflow: hidden;
+}
+
+.widget {
+	text-align: center;
+	width: 50%;
+	float: left;
+	padding: 40px 0;
+	margin: 0;
+}
+
+.widget-title {
+	margin: 0;
+	font-family: "Homestead", serif;
+	font-size: 18px; font-size: 1.8rem;
+	color: #55736d;
+}
+
+.widget h2 {
+	margin: 0;
+	font-size: 18px; font-size: 1.8rem;
+	color: #fff;
+}
+
+.widget p {
+	margin: 0;
+	color: #fff;
+}
+
+.copyright {
+	text-align: center;
+	color: #55736d;
+	display: block;
+}
+
+
+
+
+
+/****************/
+/* State Rules */
+/****************/
+
+
+
+
+
+/****************/
+/* Theme Rules */
+/****************/
