@@ -1,7 +1,5 @@
 <?php wp_footer(); ?>
 
-</div><!-- #main -->
-
 </div><!-- #page -->
 </div> <!-- #wrapper -->
 <footer id="footer">

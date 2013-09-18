@@ -26,6 +26,9 @@ function ul_widgets_init() {
 }
 
 function add_my_script() {
+  wp_enqueue_script('scrollto',get_stylesheet_directory_uri().'/js/scrollto.js', array('jquery') );
+  wp_enqueue_script('localscroll',get_stylesheet_directory_uri().'/js/localscroll.js', array('jquery', 'scrollto') );
+  wp_enqueue_script('flexslider', get_stylesheet_directory_uri().'/js/flexslider.js', array('jquery') );
 	wp_enqueue_script('script',	get_stylesheet_directory_uri().'/js/script.js', array('jquery')	);
 	}    
 

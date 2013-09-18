@@ -15,4 +15,26 @@ jQuery(document).ready(function($) {
 	} else {
 		column1.height(column2.height());
 	}
+
+	// Side Navigation
+	var menuItem = $('.side-nav > .menu-item').not('.current-menu-item');
+
+	// 1. Append expand buttons to any menu item with a submenu
+	$(menuItem).has('.sub-menu').append('<a class="icon-expand"></a>');
+
+	// 2. Collapse sub-menu
+	$(menuItem).children('.sub-menu').hide();
+
+	// 3. Open on clicking icon-expand
+	$('.icon-expand').click(function(){
+		$(this).parent().children('.sub-menu').slideToggle();
+		$(this).toggleClass('rotate');
+	});
+
+	// 4. Implement localScroll
+	$('.side-nav').localScroll({
+		offset: -30
+	});
+
+
 });

@@ -15,7 +15,7 @@
 		<![endif]-->
 		<?php wp_head(); ?>
     </head>
-<body>
+<body <?php body_class(); ?> >
 	<div id="wrapper">
 		<header class="site-header clearfix">
 			<div id="masthead" class="container">
@@ -40,5 +40,4 @@
 				</div> <!-- .container -->
 			</nav><!-- #site navigation -->
 		</header> <!-- header -->
-	<div id="page">
-		<div id="main" class="clearfix">
+	<div id="page" class="clearfix">
