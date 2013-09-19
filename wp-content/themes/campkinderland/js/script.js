@@ -36,5 +36,26 @@ jQuery(document).ready(function($) {
 		offset: -30
 	});
 
+	// Contact Page toggling
+	$('.summer-toggle').click(function(){
+		if ( ! $(this).hasClass('active') ) {
+			$('.active-address').removeClass('active-address');
+			$('.summer-contact').addClass('active-address');
+			$('.active').removeClass('active');
+			$(this).addClass('active');
+			$('body').removeClass('off-season-map');
+		}
+	});
+
+	$('.off-toggle').click(function(){
+		if ( ! $(this).hasClass('active') ) {
+			$('.active-address').removeClass('active-address');
+			$('.off-season-contact').addClass('active-address');
+			$('.active').removeClass('active');
+			$(this).addClass('active');
+			$('body').addClass('off-season-map');
+		}
+	})
+
 
 });

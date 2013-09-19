@@ -14,11 +14,16 @@
 	</div> <!-- .partners -->
 	<?php endif; ?>
 
-	<div class="contact clearfix">
+	<div class="footer-contact clearfix">
 		<div class="container">
 			<?php dynamic_sidebar('Footer'); ?>
 		</div> <!-- .container -->
-	</div> <!-- .contact -->
+	</div> <!-- .footer-contact -->
+	<div class="social-icons container">
+		<a class="icon facebook" href="#" twitter="Friend us on Facebook">Facebook</a>
+		<a class="icon twitter" href="#" title="Follow us on Twitter">Twitter</a>
+		<a class="icon flickr" href="#" title="Check us out on Flickr">Flickr</a>
+	</div> <!-- .social-icons -->
 
 	<span class="copyright">Camp Kinderland &copy; 2007 - <?php echo date("Y"); ?> </span>
 </footer>

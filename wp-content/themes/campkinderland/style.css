@@ -131,6 +131,13 @@ html[xmlns] .clearfix {
 
 /* Icons & Universal */
 
+.icon {
+	text-indent: -999999px;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+
 .icon-expand {
 	width: 15px;
 	height: 15px;
@@ -291,9 +298,21 @@ nav {
 	text-transform: uppercase;
 }
 
-.menu a:hover {
+.menu .menu-item > a:hover {
+	text-decoration: none;
+}
+
+.menu .current-menu-item > li a {
 	background: #55736d;
 	text-decoration: none;
+}
+
+.menu > .menu-item {
+	position: relative;
+}
+
+.menu li:hover > a {
+	background: rgba(208, 217, 145, 1) ;
 }
 
 .menu li:hover > .sub-menu {
@@ -304,21 +323,20 @@ nav {
 	display: none;
 	z-index: 999;
 	position: absolute;
-	width: 100%;
 	left: 0;
 	padding: 12px 0;
-	background: rgba(208, 217, 145, .7);
+	background: rgba(208, 217, 145, 1);
 	list-style-type: none;
+	min-width: 100%;
 }
 
 .menu .sub-menu li a {
 	padding: 0 12px;
-	display: inline-block;
-	float: left;
 	font-size: 14px; font-size: 1.4rem;
 	color: #55736d;
 	text-transform: none;
-	border-right: 1px solid #55736d;
+	width: auto;
+	white-space: nowrap;
 }
 
 .menu .sub-menu a:hover {
@@ -330,7 +348,7 @@ nav {
 	border: none;
 }
 
-.menu .sub-menu li:first-child a:before {
+.menu .sub-menu a:before {
 	content: '\00bb  ';
 }
 
@@ -399,6 +417,10 @@ nav {
 }
 
 /* Home Content (News + Events) */
+
+.home #page {
+	background: none;
+}
 
 .home-content {
 	padding: 22px 0 0;
@@ -641,8 +663,48 @@ footer {
 	display: block;
 }
 
+.widget:last-child {
+	width: 660px;
+	margin: 0 auto 20px;
+	padding: 20px 0;
+	float: none;
+	clear: both;
+	background: rgba(85,115,109, .3);
+}
+
+.widget:last-child .widget-title {
+	display: none;
+}
+
+.social-icons {
+	clear: both;
+	text-align: center;
+}
+
+.social-icons a {
+	margin: 0 10px 20px;
+}
+
+.facebook {
+	background: url('img/icon-facebook.png');
+}
+
+.twitter {
+	background: url('img/icon-twitter.png');
+}
+
+.flickr {
+	background: url('img/icon-flickr.png');
+}
 
 /* Page */
+
+#page {
+	background: url('img/tree-bg.png');
+	background-size: cover;
+	background-attachment: fixed;
+}
+
 .secondary {
 	width: 228px;
 	margin: 24px 0 0 0;
@@ -670,6 +732,17 @@ footer {
 	border-bottom: 1px solid #55736d;
 	text-align: center;
 	margin: 0 0 12px 0;
+}
+
+.page-title a {
+	width: 100%;
+	display: block;
+}
+
+.page-title a:hover {
+	text-decoration: none;
+	background: #55736d;
+	color: #fff;
 }
 
 /* Side Navigation */
@@ -702,13 +775,94 @@ footer {
 }
 
 .side-nav .sub-menu {
-	padding: 0 0 0 12px;
+	padding: 0 0 0 0;
 }
 
 .side-nav .sub-menu a {
 	font-weight: 400;	
 }
 
+
+/* Page (No Sidebar) */
+
+.no-side {
+	width: 500px;
+	margin: 50px auto;
+	float: none;
+}
+
+
+/* Contact Page */
+.contact {
+	float: left;
+	padding-left: 0;
+	width: 400px;
+}
+
+.contact > h1 {
+	padding: 0 10px;
+}
+
+.season-toggle-container {
+	margin: 0 0 15px 10px;
+}
+
+.season-toggle {
+	display: inline-block;
+	padding: 3px 10px;
+	background: #a3a3a3;
+	color: #fff;
+	font-size: 10px; font-size: 1.0rem;
+	cursor: pointer;
+	float: left;
+}
+
+.season-toggle:hover {
+	text-decoration: none;
+}
+
+.active {
+	background: #9dbf8e;
+}
+
+.address {
+	padding: 10px;
+	margin: 0 0 20px 0;
+	width: 300px;
+}
+
+.active-address {
+	background: rgba(157,191,142,.66);
+}
+
+.address h2,
+.address h3 {
+	font-family: "Homestead", serif;
+	color: #2d2d2d;
+}
+
+.address h3 {
+	font-size: 14px; font-size: 1.4rem;
+}
+.email-contact {
+	padding: 50px 10px;
+}
+
+.page-template-template-contact-php #page {
+	background: none;
+}
+
+.page-template-template-contact-php {
+	background: url('img/summer-map.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-attachment: fixed;
+}
+
+.off-season-map {
+	background: url('img/off-season-map.png');
+}
 
 /****************/
 /* State Rules */
