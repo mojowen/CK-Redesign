@@ -8,7 +8,7 @@ get_header(); ?>
 
 <?php 	$images = get_field('home_gallery');
 		if ( $images ): ?>
-	<section class="flexslider">
+	<section class="flexslider clearfix">
 		<ul class="slides">
 			<?php foreach( $images as $image ): ?>
 				<li class="slide">
@@ -70,23 +70,15 @@ get_header(); ?>
 				while ( have_posts() ) : the_post();  ?>
 
 				<article class="event clearfix">
-					<div class="event-date">
-						<?php $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
-								$month = $date->format('F');
-								$day = $date->format('d');
-						?>
-						<span class="month"><?php echo $month ; ?></span>
-						<span class="day"><?php echo $day ; ?></span>
-					</div> <!-- .event-date -->
-
+					<?php event_date(); ?>
 					<h3 class="event-title post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<div class="event-description">
+					<div class="event-blurb">
 						<?php the_field('event_blurb'); ?>
 					</div> <!-- .event-description -->
 				</article> <!-- .event -->
 			<?php  endwhile;  ?>
 			<div class="read-more">
-				<a href="">View All Events</a>
+				<a href="/kinderland-community/events">View All Events</a>
 			</div> <!-- .read-more -->
 		</div> <!-- .events -->
 	</div> <!-- .container -->

@@ -23,6 +23,15 @@ function ul_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+  register_sidebar( array(
+    'name' => __( 'News & Announcements', 'ul' ),
+    'id' => 'blog',
+    'before_widget' => '<div class="widget">',
+    'after_widget' => "</div>",
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+  ) );
 }
 
 function add_my_script() {
@@ -82,6 +91,40 @@ add_action('init', 'events_init');
     register_post_type('Event', $args);
 }
 
+add_action('init', 'facilities_init');
+  function facilities_init() {
+    $labels = array(
+      'name' => 'facility',
+      'singular_name' => 'Facility',
+      'menu_name' => 'Facilities',
+      'add_new' => 'Add New',
+      'add_new_item' => __('Add New Facility'),
+      'edit_item' => __('Edit Facility'),
+      'new_item' => __('New Facility'),
+      'view_item' => __('View Facility'),
+      'search_items' => __('Search Facilities'),
+      'not_found' =>  __('No Facilities found'),
+      'not_found_in_trash' => __('No Facilities found in Trash'),
+    );
+
+    $args = array(
+      'label' => 'Facility',
+      'labels' => $labels,
+      'description' => 'A Facility',
+      'public' => true, //most admin display flows from this by default
+      'publicly_queryable' => true,
+      'exclude_from_search' => false,
+      'show_ui' => true,
+      'menu_position' => 20,
+      'hierarchical' => true,
+      'taxonomies' => array(''),
+      'supports' =>  array('title','editor','author','thumbnail','excerpt','custom-fields','revisions'),
+      'has_archive' => false,
+    );
+
+    register_post_type('facility', $args);
+}
+
 // Get the current time and return each component
 function ck_current_time() {
   $time = current_time('timestamp');
@@ -90,4 +133,20 @@ function ck_current_time() {
   $year = date('y', $time);
   return array($date, $month, $year);
 } 
+
+// Fancy event date 
+function event_date() {
+  ?>
+    <div class="event-date">
+       <?php $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+           $month = $date->format('F');
+           $day = $date->format('d');
+       ?>
+       <span class="month"><?php echo $month ; ?></span>
+       <span class="day"><?php echo $day ; ?></span>
+    </div> <!-- .event-date -->
+<?php 
+
+}
+
 ?>

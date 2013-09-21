@@ -1,8 +1,21 @@
 /*
-	Theme Name:     Unnamed
+	Theme Name:     Camp Kinderland
 	Author:         Noah Manger
 */
 @import url("normalize.css");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+@font-face {
+    font-family: 'homestead_regularregular';
+    src: url('font/homestead-regular-webfont.eot');
+    src: url('font/homestead-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/homestead-regular-webfont.woff') format('woff'),
+         url('font/homestead-regular-webfont.ttf') format('truetype'),
+         url('font/homestead-regular-webfont.svg#homestead_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 /****************/
 /* Base Styles */
@@ -24,7 +37,7 @@ body {
 }
 
 h1, h2 {
-	font-family: 'Homestead', serif;
+	font-family: 'homestead_regularregular', serif;
 	color: #55736d;
 	font-weight: normal;
 }
@@ -139,14 +152,16 @@ html[xmlns] .clearfix {
 }
 
 .icon-expand {
+	display: inline-block !important;
+	padding: 0 !important;
 	width: 15px;
 	height: 15px;
 	background: url('img/icon-expand.png');
 	background-size: 15px 15px;
 	left: 0px;
 	position: absolute;
-	top: 15px;
-	left: 0px;
+	top: 12px;
+	left: -20px;
 	cursor: pointer;
 	opacity: .5;
 	-webkit-transition: all .2s;
@@ -161,6 +176,9 @@ html[xmlns] .clearfix {
 
 .icon-expand:hover {
 	opacity: 1;
+	background: url('img/icon-expand.png') !important;
+	background-size: 15px 15px !important;
+
 }
 
 .expand {
@@ -203,7 +221,7 @@ header:before {
 }
 
 .site-title {
-	font-family: "Homestead", serif;
+	font-family: "homestead_regularregular", serif;
 	font-size: 60px; font-size: 6.0rem;
 	color: #364659;
 	margin: 0;
@@ -213,6 +231,7 @@ header:before {
 
 .site-title:hover {
 	text-decoration: none;
+	color: #9dbf8e;
 } 
 
 .site-description {
@@ -224,7 +243,7 @@ header:before {
 }
 
 .site-description-year {
-	font-family: "Homestead", serif;
+	font-family: "homestead_regularregular", serif;
 	font-size: 18px; font-size: 1.8rem;
 	color: #9dbf8e;
 	padding: 0;
@@ -302,8 +321,8 @@ nav {
 	text-decoration: none;
 }
 
-.menu .current-menu-item > li a {
-	background: #55736d;
+.menu .current-menu-item {
+	background: rgba(208, 217, 145, 1);
 	text-decoration: none;
 }
 
@@ -355,6 +374,10 @@ nav {
 
 /* Slider */
 
+.flexslider {
+	position: relative;
+}
+
 .slides {
 	list-style-type: none;
 	padding: 0;
@@ -370,9 +393,35 @@ nav {
 
 .slide img {
 	width: 100%;
-	height: 520px;
+	height: auto;
 }
 
+.flex-direction-nav {
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	bottom: 224px;
+	list-style-type: none;
+}
+
+.flex-direction-nav li a {
+	display: block;
+	text-indent: -9999px;
+	height: 72px;
+	width: 37px;
+}
+
+.flex-prev {
+	float: left;
+	margin: 0 0 0 100px;
+	background: url('img/flex-prev.png');
+}
+
+.flex-next {
+	float: right;
+	margin: 0 100px 0 0;
+	background: url('img/flex-next.png');
+}
 
 /* Our Story */
 
@@ -573,7 +622,7 @@ nav {
 .event-date .day {
 	font-size: 48px; font-size: 4.8rem;
 	line-height: 1;
-	font-family: "Homestead", serif;
+	font-family: "homestead_regularregular", serif;
 	color: #fff;
 }
 
@@ -627,11 +676,11 @@ footer {
 	float: right;
 }
 
-.contact {
+#footer .contact {
 	overflow: hidden;
 }
 
-.widget {
+#footer .widget {
 	text-align: center;
 	width: 50%;
 	float: left;
@@ -639,20 +688,20 @@ footer {
 	margin: 0;
 }
 
-.widget-title {
+#footer  .widget-title {
 	margin: 0;
-	font-family: "Homestead", serif;
+	font-family: "homestead_regularregular", serif;
 	font-size: 18px; font-size: 1.8rem;
 	color: #55736d;
 }
 
-.widget h2 {
+#footer .widget h2 {
 	margin: 0;
 	font-size: 18px; font-size: 1.8rem;
 	color: #fff;
 }
 
-.widget p {
+#footer .widget p {
 	margin: 0;
 	color: #fff;
 }
@@ -663,7 +712,7 @@ footer {
 	display: block;
 }
 
-.widget:last-child {
+#footer .widget:last-child {
 	width: 660px;
 	margin: 0 auto 20px;
 	padding: 20px 0;
@@ -672,7 +721,7 @@ footer {
 	background: rgba(85,115,109, .3);
 }
 
-.widget:last-child .widget-title {
+#footer .widget:last-child .widget-title {
 	display: none;
 }
 
@@ -700,23 +749,24 @@ footer {
 /* Page */
 
 #page {
-	background: url('img/tree-bg.png');
+	background: url('img/tree-bg.png') no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+	background-position: 0% -300%;
 }
 
 .secondary {
 	width: 228px;
-	margin: 24px 0 0 0;
-	padding: 0 20px 0 0;
+	margin: 50px 0 0 0;
+	padding: 0 20px 200px 0;
 	float: left;
 	border-right: 2px solid #d0d991;
 }
 
 .primary {
-	width: 650px;
-	margin: 24px 0 0 0;
-	padding: 0 0 200px 60px;
+	width: 590px;
+	margin: 50px 0 0 0;
+	padding: 0 60px 200px 60px;
+	background: rgba(255,255,255,.5);
 	float: right;
 }
 
@@ -731,7 +781,7 @@ footer {
 	border-top: 1px solid #55736d;
 	border-bottom: 1px solid #55736d;
 	text-align: center;
-	margin: 0 0 12px 0;
+	margin: 0 0 24px 0;
 }
 
 .page-title a {
@@ -745,6 +795,10 @@ footer {
 	color: #fff;
 }
 
+.primary .page-title {
+	border: none;
+	text-align: left;
+}
 /* Side Navigation */
 .side-nav,
 .side-nav .sub-menu {
@@ -752,8 +806,8 @@ footer {
 }
 
 .side-nav > .menu-item {
-	padding: 10px 24px;
 	position: relative;
+	margin: 0 0 1px 0;
 }
 
 
@@ -767,11 +821,20 @@ footer {
 
 .side-nav .current-menu-item > .sub-menu {
 	display: block;
+	background: #f4f6e6;
+	padding: 0 0 10px 0;
 }
 
 .side-nav .menu-item a {
+	display: block;
+	padding: 10px 24px;
 	font-size: 14px; font-size: 1.4rem;
 	font-weight: 700;
+}
+
+.side-nav .menu-item a:hover {
+	background: #f4f6e6;
+	text-decoration: none;
 }
 
 .side-nav .sub-menu {
@@ -779,9 +842,14 @@ footer {
 }
 
 .side-nav .sub-menu a {
-	font-weight: 400;	
+	font-weight: 400;
+	padding: 0 0 0 24px;	
 }
 
+.side-nav .sub-menu a:hover {
+	text-decoration: underline;
+	background: none;
+}
 
 /* Page (No Sidebar) */
 
@@ -797,6 +865,7 @@ footer {
 	float: left;
 	padding-left: 0;
 	width: 400px;
+	background: none;
 }
 
 .contact > h1 {
@@ -837,7 +906,7 @@ footer {
 
 .address h2,
 .address h3 {
-	font-family: "Homestead", serif;
+	font-family: "homestead_regularregular", serif;
 	color: #2d2d2d;
 }
 
@@ -856,13 +925,183 @@ footer {
 	background: url('img/summer-map.png');
 	background-position: top center;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 100%;
 	background-attachment: fixed;
 }
 
 .off-season-map {
 	background: url('img/off-season-map.png');
+	background-attachment: fixed;
 }
+
+/* Facilities */
+
+.page-template-template-facilities-php #page {
+	padding: 50px 0 200px 0;
+}
+
+.facilities {
+	background: #fbfdfa;
+	padding: 35px 70px;
+	width: 820px;
+	margin: 0 auto;
+	position: relative;
+	border: 1px solid #cbcbcb;
+}
+
+.facilities .primary {
+	padding: 0 0 0 20px;
+	margin: 0;
+	width: 540px;
+}
+
+.facilities .secondary {
+	width: 240px;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+.fac-slide {
+	display: none;
+}
+
+.fac-image {
+	padding: 10px;
+	border: 1px solid #9dbf8e;
+	background: #fff;
+	float: left;
+}
+
+.fac-image:first-child {
+	margin: 0 10px 0 0;
+}
+.fac-image img {
+	border: 1px solid #cdcdcd;
+}
+
+.fac-content {
+	padding: 20px 0 0 0;
+}
+
+.rental-link {
+	width: 100%;
+	text-align: center;
+	margin: 25px 0;
+	padding: 25px 0;
+	border-top: 2px dotted #9dbf8e;
+}
+
+.rental-link a {
+	font-weight: 700;
+}
+
+.stitch {
+	position: absolute;
+	width: 43px;
+	height: 43px;
+	z-index: -1;
+}
+
+.stitch-ul {
+	background: url('img/stitch_ul.png');
+	left: -10px;
+	top: -10px;
+}
+
+.stitch-ur {
+	background: url('img/stitch_ur.png');
+	right: -10px;
+	top: -10px;
+}
+
+.stitch-lr {
+	background: url('img/stitch_lr.png');
+	right: -10px;
+	bottom: -10px;
+}
+
+.stitch-ll {
+	background: url('img/stitch_ll.png');
+	left: -10px;
+	bottom: -10px;
+}
+
+/*** News *****/
+
+.blog-side {
+	padding: 25px 20px;
+	margin: 25px 0;
+	border-top: 2px dotted #9dbf8e;
+}
+
+.blog-side .widget-title {
+	color: #333;
+
+}
+.widget {
+	padding: 20px 0;
+}
+.widget ul {
+	list-style-type: none;
+}
+
+.blog-side h3 {
+	font-size: 18px; font-size: 1.8rem;
+	color: #cdcdcd;
+}
+
+.widget ul li a {
+	font-size: 14px; font-size: 1.4rem;
+}
+
+.widget .post-date {
+	display: block;
+	padding:0px 0 12px;
+	font-size: 10px; font-size: 1.0rem;
+}
+
+.primary .post {
+	background: #fbfdfa;
+	padding: 20px 40px;
+	margin: 10px 0;
+	border: 1px solid #cbcbcb;
+}
+
+.nav-previous,
+.nav-next {
+	display: inline-block;
+}
+
+.nav-next {
+	float: right;
+}
+
+.primary .post-date, 
+.primary .post-author {
+	font-size: 12px; font-weight: 1.2rem;
+	display: inline-block;
+	padding: 0 0 24px 0;
+}
+
+
+
+/* Events Single Page */
+
+.single-event .event-description {
+	padding: 20px;
+	margin: 20px 0;
+	border-top: 2px solid #9dbf8e;
+	clear: both;
+}
+
+.event-header {
+	width: 490px;
+	padding: 0 0 20px 0;
+	float: right;
+}
+
+
 
 /****************/
 /* State Rules */

@@ -11,7 +11,7 @@
 	<ul class="partner-logos horizontal">
 		<?php foreach( $logos as $logo ) : ?>
 			<li class="partner-logo">
-				<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+				<a href="<?php echo $logo['description']; ?>" title="<?php $logo['alt']; ?>" target="blank"><img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" /></a>
 			</li>
 		<?php endforeach; ?>
 	</ul> <!-- .partner-logos -->

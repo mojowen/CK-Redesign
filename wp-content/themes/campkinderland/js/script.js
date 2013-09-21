@@ -5,6 +5,15 @@ jQuery(document).ready(function($) {
 		$('.part-2').slideToggle();
 	})	
 	
+	// Slider init
+	$('.flexslider').flexslider({
+		slideshow: true,
+		animation: 'slide',
+		controlNav: false,
+		slideshowSpeed: 4000,
+	});
+
+
 	// Matching column heights 
 	var column1, column2;
 	column1 = $('.news');
@@ -56,6 +65,32 @@ jQuery(document).ready(function($) {
 			$('body').addClass('off-season-map');
 		}
 	})
+
+	// Facilities Page 
+	$('.facilities .side-nav a').click(function(e){
+		e.preventDefault();
+
+		// 1. Get the last part of the url 
+		var url = $(this).attr('href').split('/');
+		var selection = url[4];
+		console.log(selection);
+
+		// 2. Hide current facility & show the right facility 
+		$('.fac-slide').hide();
+		$('.'+selection).show();
+
+		// 3. Add highlight class to menu item
+		$('.current-menu-item').removeClass('current-menu-item');
+		$(this).parent('li').addClass('current-menu-item');
+	});
+
+	// 4. Start out by showing the first slide and highlighting first item
+	$('.facilities .side-nav li:first-child').addClass('current-menu-item');
+	var firstSlide = $('.facilities .side-nav li:first-child a');
+	var url = firstSlide.attr('href').split('/');
+	var selection = url[4];
+	$('.'+selection).show();
+
 
 
 });

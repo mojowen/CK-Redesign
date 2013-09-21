@@ -22,7 +22,7 @@ get_header(); ?>
 
 	<div class="primary">
 		<?php if ($post ->post_parent) { ?>
-			<h1><?php the_title(); ?></h1>
+			<h1 class="page-title"><?php the_title(); ?></h1>
 		<?php } ?>
 		<?php the_content(); ?>
 	</div> <!-- .primary -->
