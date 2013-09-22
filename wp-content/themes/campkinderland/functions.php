@@ -124,6 +124,39 @@ add_action('init', 'facilities_init');
 
     register_post_type('facility', $args);
 }
+add_action('init', 'donate_page_init');
+  function donate_page_init() {
+    $labels = array(
+      'name' => 'Donation Page',
+      'singular_name' => 'Donate Page',
+      'menu_name' => 'Donate Pages',
+      'add_new' => 'Add New',
+      'add_new_item' => __('Add New Donate Page'),
+      'edit_item' => __('Edit Donate Page'),
+      'new_item' => __('New Donate Page'),
+      'view_item' => __('View Donate Page'),
+      'search_items' => __('Search Donate Pages'),
+      'not_found' =>  __('No Donate Pages found'),
+      'not_found_in_trash' => __('No Donate Pages found in Trash'),
+    );
+
+    $args = array(
+      'label' => 'Donate Page',
+      'labels' => $labels,
+      'description' => 'A Donate Page',
+      'public' => true, //most admin display flows from this by default
+      'publicly_queryable' => true,
+      'exclude_from_search' => false,
+      'show_ui' => true,
+      'menu_position' => 21,
+      'hierarchical' => true,
+      'taxonomies' => array('category'),
+      'supports' =>  array('title','editor','author','thumbnail','custom-fields','revisions','taxonomies'),
+      'has_archive' => false,
+    );
+
+    register_post_type('donate_page', $args);
+}
 
 // Get the current time and return each component
 function ck_current_time() {
@@ -149,4 +182,5 @@ function event_date() {
 
 }
 
+require get_template_directory().'/wepay/init.php';
 ?>

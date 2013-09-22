@@ -87,9 +87,11 @@ jQuery(document).ready(function($) {
 	// 4. Start out by showing the first slide and highlighting first item
 	$('.facilities .side-nav li:first-child').addClass('current-menu-item');
 	var firstSlide = $('.facilities .side-nav li:first-child a');
-	var url = firstSlide.attr('href').split('/');
-	var selection = url[4];
-	$('.'+selection).show();
+	if( firstSlide.length > 0 ) {
+		var url = firstSlide.attr('href').split('/');
+		var selection = url[4];
+		$('.'+selection).show();
+	}
 
 
 
